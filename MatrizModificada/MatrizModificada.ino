@@ -103,7 +103,7 @@ for (int count = 0 ; count <= 1; count ++)
   {
     if (count < 1 )
       {
-        for (desplaza = 0; desplaza>=8; desplaza++)
+        for (desplaza = 8; desplaza>=0; desplaza--)
           {
             for (ciclo=0; ciclo<=35; ciclo++)
               {
@@ -112,7 +112,7 @@ for (int count = 0 ; count <= 1; count ++)
           }
       }
     else {
-        for (desplaza = 0; desplaza>=8; desplaza++)
+        for (desplaza = 8; desplaza>=0; desplaza--)
           {
             for (ciclo=0; ciclo<=1; ciclo++)
               {
