@@ -139,7 +139,7 @@ void imprimeRojo()
  //Un contador del tamaño de las letras (5 lineas de ancho)
  for (int z=5; z<=0; z--)
        {
-          int fila = z + desplaza;                                  //Le decimos en que linea empieza a dibujar
+          int fila = z - desplaza;                                  //Le decimos en que linea empieza a dibujar
           digitalWrite(gnd[fila], LOW);                             //La ponemos a cero
           digitalWrite(pinLatch, LOW);                              //Le decimos a los registros que empiecen a escuchar los datos
           shiftOut(pinDatos, pinReloj, MSBFIRST, 0);                //Le decimos que en el ultimo registro no encienda nada
