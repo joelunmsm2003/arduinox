@@ -6,6 +6,17 @@ int letra = 0;         //Variable para cada letra
 int ciclo = 0;         //Variable para los ciclos de cada letra en cada posicion
 int desplaza = 0;      //Variable para generar desplazamiento en las filas
 
+
+////////////
+ int ledPin = 13;
+ int joyPin1 = 0;                 // slider variable connecetd to analog pin 0
+ int joyPin2 = 1;                 // slider variable connecetd to analog pin 1
+ int value1 = 0;                  // variable to read the value from the analog pin 0
+ int value2 = 0;                  // variable to read the value from the analog pin 1
+
+
+ ///////////////////
+
 //Definimos los numeros decimales que hacen falta para dibujar cada caracter
 
 #define SP {0, 0, 0, 0, 0}               //Espacio
@@ -57,6 +68,8 @@ int gnd[13]={0,0,0,0,0,2,3,4,5,6,7,8,9};
 void setup()
 
 {
+  
+      Serial.begin(9600);
   //Ponemos del pin 2 al 12 como salidas
   for (int i=2;i<=12; i++)
     {
@@ -74,11 +87,23 @@ void loop()
 {
 
 //Pequeño contador para que salga una letra de cada color
+
+  value1 = analogRead(joyPin1);   
+  // this small pause is needed between reading
+  // analog pins, otherwise we get the same value twice
+           
+  // reads the value of the variable resistor 
+  value2 = analogRead(joyPin2); 
+  Serial.println(value1);  
+  Serial.println(value2); 
+  
+  
+
 for (int count = 0 ; count <= 1; count ++)
   {
     if (count < 1 )
       {
-        for (desplaza = 8; desplaza>=0; desplaza--)
+        for (desplaza = 0; desplaza>=8; desplaza++)
           {
             for (ciclo=0; ciclo<=35; ciclo++)
               {
@@ -87,7 +112,7 @@ for (int count = 0 ; count <= 1; count ++)
           }
       }
     else {
-        for (desplaza = 8; desplaza>=0; desplaza--)
+        for (desplaza = 0; desplaza>=8; desplaza++)
           {
             for (ciclo=0; ciclo<=1; ciclo++)
               {
@@ -96,8 +121,7 @@ for (int count = 0 ; count <= 1; count ++)
           }
         }
 
-  //Una vez ha mostrado una letra, sumamos uno para que salga la siguiente
- 
+
 
   }
 
