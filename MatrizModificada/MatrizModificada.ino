@@ -97,7 +97,7 @@ for (int count = 0 ; count <= 1; count ++)
         }
 
   //Una vez ha mostrado una letra, sumamos uno para que salga la siguiente
-  letra++;
+ 
 
   }
 
