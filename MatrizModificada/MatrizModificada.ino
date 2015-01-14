@@ -137,7 +137,7 @@ if(letra == 32)
 void imprimeRojo()
 {
  //Un contador del tamaño de las letras (5 lineas de ancho)
- for (int z=0; z<=5; z++)
+ for (int z=5; z<=0; z--)
        {
           int fila = z + desplaza;                                  //Le decimos en que linea empieza a dibujar
           digitalWrite(gnd[fila], LOW);                             //La ponemos a cero
