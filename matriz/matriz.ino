@@ -5,7 +5,7 @@ int letra = 0;         //Variable para cada letra
 int ciclo = 0;         //Variable para los ciclos de cada letra en cada posicion
 int desplaza = 0;      //Variable para generar desplazamiento en las filas
 //Definimos los numeros decimales que hacen falta para dibujar cada caracter
-#define SP {1, 1, 1, 1, 1}    
+#define SP {1, 1, 1, 255, 255}    
 
 
 //Escribimos la frase separando cada letra por comas
